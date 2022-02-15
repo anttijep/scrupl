@@ -259,7 +259,7 @@ bool STCPClient::BeginSend(HWND dialog, std::vector<unsigned char> data, std::st
 bool STCPClient::ForceQuit()
 {
 	std::lock_guard<std::mutex> lock(mutex);
-	if (!quit)
+	if (quit)
 	{
 		return false;
 	}
